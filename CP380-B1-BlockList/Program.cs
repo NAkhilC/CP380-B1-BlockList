@@ -2,6 +2,7 @@
 using CP380_B1_BlockList.Models;
 using System.Collections.Generic;
 using System.Text.Json;
+using System.Linq;
 
 namespace CP380_B1_BlockList
 {
@@ -15,9 +16,12 @@ namespace CP380_B1_BlockList
             { 
                 new Payload("user", TransactionTypes.GRANT, 10, null), 
                 new Payload("user", TransactionTypes.BUY, 10, "10C"),
+                //new Payload("user", TransactionTypes.SELL, 100, "1009C"),
             };
-
-            var block = new Block(DateTime.Now, "", data);
+            int count = myChain.Chain.Count;
+            //Console.WriteLine(count);
+            string prevhash=JsonSerializer.Serialize(myChain.Chain[count-1].Hash);
+            var block = new Block(DateTime.Now.ToString("MM/dd/yyyy HH:mm:ss tt"), prevhash , data);
 
             myChain.AddBlock(block);
 
