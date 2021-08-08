@@ -17,6 +17,8 @@ namespace CP380_B1_BlockList
                 new Payload("user", TransactionTypes.GRANT, 10, null), 
                 new Payload("user", TransactionTypes.BUY, 10, "10C"),
                 //new Payload("user", TransactionTypes.SELL, 100, "1009C"),
+                  // new Payload("user", TransactionTypes.BUY, 10, "10Ckkk"),
+               // new Payload("user", TransactionTypes.GRANT, 180, "100C"),
             };
             int count = myChain.Chain.Count;
             //Console.WriteLine(count);
