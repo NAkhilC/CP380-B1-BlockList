@@ -1,4 +1,4 @@
-﻿
+
 namespace CP380_B1_BlockList.Models
 {
     public enum TransactionTypes
@@ -8,22 +8,18 @@ namespace CP380_B1_BlockList.Models
 
     public class Payload
     {
-
-        // TODO
-
-        public string v1;
-        public TransactionTypes gRANT;
-        public  int v2;
-        public object p;
+        public string user { get; set; }
+        public TransactionTypes tType { get; set; }
+        public int amount { get; set; }
+        public string item { get; set; }
 
 
-
-        public Payload(string v1, TransactionTypes gRANT, int v2, object p)
+        public Payload(string userName, TransactionTypes trType, int amount, string item)
         {
-            this.v1 = v1;
-            this.gRANT = gRANT;
-            this.v2 = v2;
-            this.p = p;
+            this.user = userName;
+            this.tType = trType;
+            this.amount = amount;
+            this.item = item;
         }
     }
 }
